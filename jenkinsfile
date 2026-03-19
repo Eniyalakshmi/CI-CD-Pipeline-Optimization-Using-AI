@@ -2,37 +2,20 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Clone Repo') {
+        stage('Run Python') {
             steps {
-                git 'https://github.com/Eniyalakshmi/CI-CD-Pipeline-Optimization-Using-AI.git'
+                bat '"pipeline {
+    agent any
+
+    stages {
+        stage('Run Python') {
+            steps {
+                bat '"C:\\Users\\YourName\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" main.py'
             }
         }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'pip install -r requirements.txt'
+    }
+}" main.py'
             }
         }
-
-        stage('Code Optimization') {
-            steps {
-                sh 'python optimizer.py'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'pytest test_app.py'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying Application...'
-                sh 'python app.py'
-            }
-        }
-
     }
 }
