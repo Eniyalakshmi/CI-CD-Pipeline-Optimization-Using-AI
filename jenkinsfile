@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourrepo/ci_cd_project.git'
+                git 'https://github.com/Eniyalakshmi/CI-CD-Pipeline-Optimization-Using-AI.git'
             }
         }
 
