@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run Python') {
             steps {
-                bat '"pipeline {
+                bat 'pipeline' {
     agent any
 
     stages {
